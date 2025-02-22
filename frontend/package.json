@@ -1,0 +1,36 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@heroui/react": "^2.6.14",
+    "@privy-io/wagmi": "^0.2.12",
+    "@tanstack/react-query": "^5.62.7",
+    "axios": "^1.7.7",
+    "next": "14.2.12",
+    "next-qrcode": "^2.5.1",
+    "permissionless": "^0.2.30",
+    "pinata-web3": "^0.5.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "wagmi": "^2.14.1"
+  },
+  "devDependencies": {
+    "@privy-io/react-auth": "^2.4.2",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.12",
+    "framer-motion": "^11.18.2",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --loader ts-node/esm ./src/app.ts",
+    "prisma": "npx prisma generate",
+    "build": "npx prisma generate && tsc",
+    "start": "node --loader ts-node/esm ./src/app.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.8.2",
+    "nodemon": "^3.1.7",
+    "prisma": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "https": "^1.0.0",
+    "zod": "^3.23.8"
+  }
+}
