@@ -103,14 +103,14 @@ export default function LabelsPage() {
     <div>
       <div className="p-4 flex gap-2">
         {ready && authenticated && (
-          <Button radius="sm" color="danger" onClick={handleLogout}>
+          <Button radius="sm" color="danger" onPress={handleLogout}>
             Logout
           </Button>
         )}
         <Button
           radius="sm"
           color="secondary"
-          onClick={() => router.push("/labels/new")}
+          onPress={() => router.push("/labels/new")}
         >
           Create Label
         </Button>

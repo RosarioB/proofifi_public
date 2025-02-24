@@ -26,7 +26,7 @@ export default function Home() {
         alt="Proofifi Logo"
       />
       {ready && !authenticated && (
-        <Button radius="sm" color="secondary" onClick={() => login()}>
+        <Button radius="sm" color="secondary" onPress={() => login()}>
           Login
         </Button>
       )}
