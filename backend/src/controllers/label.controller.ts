@@ -7,40 +7,49 @@ export async function createLabel(req: Request, res: Response): Promise<void> {
       data: req.body,
     });
 
-    console.log(`[${new Date().toISOString()}] Label Successfully Created:`, label.id);
+    console.log(
+      `[${new Date().toISOString()}] Label Successfully Created:`,
+      label.id
+    );
     res.status(201).json({
       status: true,
       message: "Label Successfully Created",
       data: label,
     });
-    } catch (error) {
+  } catch (error) {
     console.error(`[${new Date().toISOString()}] Error creating label:`, error);
     res.status(500).json({
       status: false,
       message: "server error",
     });
-    }
   }
+}
 
-  export async function getLabels(req: Request, res: Response): Promise<void> {
-    try {
+export async function getLabels(req: Request, res: Response): Promise<void> {
+  try {
     const labels = await prisma.label.findMany();
     if (!labels) {
       console.log(`[${new Date().toISOString()}] Labels Not Found`);
       res.status(404).json({
-      status: false,
-      message: "Labels Not Found",
+        status: false,
+        message: "Labels Not Found",
       });
       return;
     }
-    console.log(`[${new Date().toISOString()}] Labels Successfully fetched:`, labels.map(label => label.id));
+    console.log(
+      `[${new Date().toISOString()}] Labels Successfully fetched:`,
+      labels.map((label) => label.id)
+    );
     res.status(200).json({
       status: true,
       message: "Labels Successfully fetched",
       data: labels,
     });
-    } catch (error) {
-    console.error(`[${new Date().toISOString()}] Error fetching labels:`, error);
+  } catch (error) {
+    console.error(
+      `[${new Date().toISOString()}] Error fetching labels:`,
+      error
+    );
     res.status(500).json({
       status: false,
       message: "server error",
@@ -64,14 +73,20 @@ export async function getLabelById(req: Request, res: Response): Promise<void> {
       });
       return;
     }
-    console.log(`[${new Date().toISOString()}] Label Successfully fetched:`, label.id);
+    console.log(
+      `[${new Date().toISOString()}] Label Successfully fetched:`,
+      label.id
+    );
     res.status(200).json({
       status: true,
       message: "Label Successfully fetched",
       data: label,
     });
   } catch (error) {
-    console.error(`[${new Date().toISOString()}] Error fetching label by ID:`, error);
+    console.error(
+      `[${new Date().toISOString()}] Error fetching label by ID:`,
+      error
+    );
     res.status(500).json({
       status: false,
       message: "An error occurred",
@@ -92,21 +107,30 @@ export async function checkSmartWallet(
     });
 
     if (!label) {
-      console.log(`[${new Date().toISOString()}] SmartWallet not found:`, smartWallet);
+      console.log(
+        `[${new Date().toISOString()}] SmartWallet not found:`,
+        smartWallet
+      );
       res.status(404).json({
         status: false,
         message: "SmartWallet not found",
       });
       return;
     }
-    console.log(`[${new Date().toISOString()}] SmartWallet found:`, smartWallet);
+    console.log(
+      `[${new Date().toISOString()}] SmartWallet found:`,
+      smartWallet
+    );
     res.json({
       status: true,
       message: "SmartWallet found",
       data: { labelId: label.id },
     });
   } catch (error) {
-    console.error(`[${new Date().toISOString()}] Error checking SmartWallet:`, error);
+    console.error(
+      `[${new Date().toISOString()}] Error checking SmartWallet:`,
+      error
+    );
     res.status(500).json({
       status: false,
       message: "server error",
@@ -126,7 +150,10 @@ export async function getLabelsBySmartWallet(
       },
     });
     if (!labels) {
-      console.log(`[${new Date().toISOString()}] Labels not found for SmartWallet:`, smartWallet);
+      console.log(
+        `[${new Date().toISOString()}] Labels not found for SmartWallet:`,
+        smartWallet
+      );
       res.status(404).json({
         status: false,
         message: "Labels not found",
@@ -134,14 +161,20 @@ export async function getLabelsBySmartWallet(
       return;
     }
 
-    console.log(`[${new Date().toISOString()}] Labels Successfully fetched for SmartWallet ${smartWallet}`, labels.map(label => label.id));
+    console.log(
+      `[${new Date().toISOString()}] Labels Successfully fetched for SmartWallet ${smartWallet}`,
+      labels.map((label) => label.id)
+    );
     res.json({
       status: true,
       message: "Labels Successfully fetched",
       data: labels,
     });
   } catch (error) {
-    console.error(`[${new Date().toISOString()}] Error fetching labels by SmartWallet:`, error);
+    console.error(
+      `[${new Date().toISOString()}] Error fetching labels by SmartWallet:`,
+      error
+    );
     res.status(500).json({
       status: false,
       message: "server error",
@@ -171,7 +204,10 @@ export async function deleteLabel(req: Request, res: Response): Promise<void> {
         id: labelId,
       },
     });
-    console.log(`[${new Date().toISOString()}] Label Successfully deleted:`, labelId);
+    console.log(
+      `[${new Date().toISOString()}] Label Successfully deleted:`,
+      labelId
+    );
     res.status(200).json({
       status: true,
       message: "Label Successfully deleted",
@@ -211,7 +247,10 @@ export async function updateLabel(req: Request, res: Response): Promise<void> {
       data: req.body,
     });
 
-    console.log(`[${new Date().toISOString()}] Label Successfully updated:`, updatedLabel.id);
+    console.log(
+      `[${new Date().toISOString()}] Label Successfully updated:`,
+      updatedLabel.id
+    );
     res.json({
       status: true,
       message: "Label Successfully updated",

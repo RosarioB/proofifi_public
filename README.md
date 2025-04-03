@@ -1,4 +1,8 @@
-# Proofifi_project
+# Proofifi_public
+This project aims to enable people to create their own labels for real-world objects like cars, wines, or other items as NFTs on the blockchain. 
+
+## Demo
+You can find a demo of this project on [YouTube](https://www.youtube.com/watch?v=-lPHbA9CEeY)
 
 ## Frontend
 ```bash
