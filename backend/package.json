@@ -4,11 +4,10 @@
   "main": "src/app.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node --loader ts-node/esm ./src/app.ts",
     "prisma": "npx prisma generate",
     "build": "npx prisma generate && tsc",
-    "start": "node --loader ts-node/esm ./src/app.ts"
+    "start": "node ./dist/app.js"
   },
   "keywords": [],
   "author": "",
