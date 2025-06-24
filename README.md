@@ -54,8 +54,6 @@ npx prisma generate
 3. Create a file `.env` in the root directory with:
 ```
 DATABASE_URL="mongodb://root:prisma@localhost:27017/proofifi?authSource=admin&retryWrites=false"
-SSL_CERTIFICATE_KEY_PATH="../certificates-test/localhost-key.pem"
-SSL_CERTIFICATE_PATH="../certificates-test/localhost.pem"
 ```
 4. Run the server
 
