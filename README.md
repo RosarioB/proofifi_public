@@ -74,12 +74,11 @@ cd backend
 1. Install dependencies:
 ```bash
 pnpm install
-npx prisma generate
 ```
 
 2. Create a `.env` file in the `backend` directory with:
 ```env
-DATABASE_URL="mongodb://root:prisma@localhost:27017/proofifi?authSource=admin&retryWrites=false"
+DATABASE_URL="mongodb://root:root@localhost:27017"
 ```
 
 3. Run the server:

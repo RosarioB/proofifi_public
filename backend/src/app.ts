@@ -2,10 +2,9 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import indexRoute from "./routes/index.js";
+import { connectToMongoDB } from "./lib/mongoose.js";
 
-if (!process.env.DATABASE_URL) {
-  throw new Error("DATABASE_URL is empty");
-}
+await connectToMongoDB();
 
 const app = express();
 app.use(express.json({ limit: "1mb" }));
